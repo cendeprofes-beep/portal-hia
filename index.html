@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal de Historia de las Ideas Argentinas | Colegio N.º 19 D.E. 17</title>
+<style>
+:root{color-scheme:dark;--azul:#091a32;--oro:#d8b777}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;background:#061326;font-family:Georgia,'Times New Roman',serif;color:#f5f1e9}
+.marco{position:relative;width:100%;height:100vh;min-height:100vh;padding:clamp(20px,3vh,34px) clamp(18px,4vw,64px)}
+.encabezado{position:relative;z-index:3;max-width:1420px;margin:0 auto;text-align:center}
+h1{margin:0;color:#f6dfa0;font-size:clamp(1.55rem,2.65vw,3rem);font-weight:700;line-height:1.18;letter-spacing:.025em;text-wrap:balance;text-shadow:0 1px 0 #fff3c8,0 2px 0 #9c7836,0 4px 3px rgba(0,0,0,.9),0 8px 20px rgba(0,0,0,.82)}
+.subtitulo{position:absolute;left:50%;top:calc(52% + 158px);transform:translateX(-50%);z-index:3;width:min(88%,1100px);margin:0;font-family:Arial,Helvetica,sans-serif;font-size:clamp(.94rem,1.24vw,1.15rem);font-weight:600;line-height:1.45;color:#f6dfa0;text-align:center;text-wrap:balance;text-shadow:0 2px 3px rgba(0,0,0,.95),0 5px 16px rgba(0,0,0,.9)}
+.acento{width:115px;height:2px;margin:clamp(10px,1.5vh,16px) auto 0;background:var(--oro)}
+.imagen{position:fixed;inset:0;width:100%;height:100%;margin:0;overflow:hidden}
+.imagen img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.78}
+.imagen::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,12,26,.34) 0%,rgba(3,12,26,.16) 45%,rgba(3,12,26,.4) 100%);pointer-events:none}
+.botonera{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(72%,760px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:18px;background:rgba(5,17,30,.26);border:1px solid rgba(201,228,238,.38);border-radius:12px;box-shadow:0 18px 48px rgba(1,7,16,.36),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(8px) saturate(1.08);z-index:2;animation:aparecer .65s cubic-bezier(.2,.75,.25,1) both}
+.botonera button{position:relative;isolation:isolate;width:100%;min-height:clamp(70px,9vh,78px);display:flex;align-items:center;gap:13px;padding:14px 48px 14px 15px;overflow:hidden;border:1px solid rgba(255,255,255,.72);border-radius:7px;background:linear-gradient(135deg,rgba(250,247,237,.97),rgba(220,233,238,.95));box-shadow:0 8px 18px rgba(1,7,16,.24),inset 0 1px 0 #fff;color:#09243a;font:700 clamp(.84rem,1.05vw,.98rem) Arial,Helvetica,sans-serif;letter-spacing:.045em;text-align:left;cursor:default;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.botonera button::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;z-index:-1;background:linear-gradient(180deg,#58bde8,#f8f5e8 50%,#58bde8);transition:width .2s ease}
+.botonera button::after{content:"→";position:absolute;right:18px;top:50%;transform:translateY(-52%);color:#17618e;font-size:1.25rem;font-weight:400;transition:transform .2s ease,color .2s ease}
+.botonera button:hover{transform:translateY(-2px);border-color:#fff;box-shadow:0 13px 25px rgba(1,7,16,.34),inset 0 1px 0 #fff;background:linear-gradient(135deg,#fffdf5,#dceff5)}
+.botonera button:hover::before{width:8px}
+.botonera button:hover::after{transform:translate(4px,-52%);color:#09243a}
+.botonera button:focus-visible{outline:3px solid rgba(232,203,146,.65);outline-offset:3px}
+.botonera svg{width:30px;height:30px;flex:0 0 auto;padding:6px;border:0;border-radius:50%;background:#0b2a43;color:#f6f1df;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease,background .2s ease}
+.botonera button:hover svg{transform:scale(1.06);background:#154b70}
+.botonera button[onclick]{cursor:pointer}
+.botonera .actividades{grid-column:1/-1;width:calc(50% - 6px);justify-self:center}
+@keyframes aparecer{from{opacity:0;transform:translate(-50%,calc(-50% + 18px))}to{opacity:1;transform:translate(-50%,-50%)}}
+@media(max-width:650px){.marco{padding:14px 10px}h1{font-size:clamp(1.25rem,5.7vw,1.8rem)}.subtitulo{top:calc(56% + 118px);font-size:clamp(.76rem,2.65vw,.94rem);line-height:1.3}.acento{margin-top:8px}.botonera{top:56%;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;width:min(88%,500px);padding:11px;border-radius:10px}.botonera button{min-height:58px;gap:8px;padding:10px 32px 10px 9px;font-size:clamp(.64rem,2.3vw,.82rem);letter-spacing:.03em}.botonera button::after{right:11px}.botonera svg{width:22px;height:22px;padding:4px}.botonera .actividades{grid-column:1/-1;width:calc(50% - 4.5px)}.imagen img{opacity:.72}.imagen::after{background:linear-gradient(180deg,rgba(3,12,26,.42),rgba(3,12,26,.24) 45%,rgba(3,12,26,.48))}}
+@media(prefers-reduced-motion:reduce){.botonera{animation:none}.botonera button,.botonera button::before,.botonera button::after,.botonera svg{transition:none}}
+</style>
+</head>
+<body>
+<main class="marco">
+<header class="encabezado">
+<h1>PORTAL DE HISTORIA DE LAS IDEAS ARGENTINAS - Colegio N.º 19 D.E. 17 «Luis Pasteur»</h1>
+<div class="acento" aria-hidden="true"></div>
+</header>
+<figure class="imagen">
+<img src="landing-page.png" alt="Collage de Historia de las Ideas Argentinas">
+<nav class="botonera" aria-label="Secciones del portal">
+<button type="button" onclick="location.href='HIA_MENU_VOCABULARIO.html'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg><span>VOCABULARIO</span></button>
+<button type="button" onclick="location.href='HIA_MENU_LINEA_DE_TIEMPO.html'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"/><circle cx="6" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="18" cy="12" r="2"/></svg><span>LÍNEA DE TIEMPO</span></button>
+<button type="button" onclick="location.href='HIA_MENU_BIOGRAFIAS.html'"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2"/><path d="M15.5 14.5A4.5 4.5 0 0 1 21 19"/></svg><span>BIOGRAFÍAS</span></button>
+<button type="button" onclick="location.href='HIA_MENU_FUENTES_DISPONIBLES.html'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v13H4z"/><path d="M2.5 4h19v3h-19z"/><path d="M9 11h6"/></svg><span>FUENTES DISPONIBLES</span></button>
+<button class="actividades" type="button" onclick="location.href='HIA_MENU_ACTIVIDADES.html'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10"/><path d="M9 2h6v4H9z"/><path d="M5 4h14v17H5z"/><path d="M8 11l1.5 1.5L12 9.5"/><path d="M14 11h2"/><path d="M8 16l1.5 1.5L12 14.5"/><path d="M14 16h2"/></svg><span>ACTIVIDADES</span></button>
+</nav>
+<p class="subtitulo">Elaborada por el Prof. Claudio Damián Sacco en base a la propuesta didáctica de la titular de la materia, Prof. Camila Vassellati</p>
+</figure>
+</main>
+</body>
+</html>
